@@ -3,6 +3,14 @@ import java.util.Objects;
 public class User {
     private String name = "Default",
             age = "100";
+    private static User user;
+
+    public static User istance() {
+        if (user == null) {
+            user = new User();
+        }
+        return user;
+    }
 
     public String getName() {
         return name;
@@ -20,7 +28,7 @@ public class User {
         this.age = age;
     }
 
-    User() {
+    private User() {
     }
 
     @Override
